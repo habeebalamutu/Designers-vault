@@ -1,0 +1,159 @@
+/* ===== BASE ===== */
+.navbar {
+  background-color: #1e2a3e;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* ===== DESKTOP NAVIGATION ===== */
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #ffc107;
+}
+
+/* Cart link badge */
+.cart-link {
+  position: relative;
+}
+
+.cart-link .cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #ffc107;
+  color: #1e2a3e;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== MOBILE ACTIONS (hidden on desktop) ===== */
+.mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-cart-icon {
+  position: relative;
+  color: white;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-cart-icon .cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #ffc107;
+  color: #1e2a3e;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon {
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.menu-icon:hover {
+  color: #ffc107;
+}
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #1e2a3e;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: left 0.3s ease;
+    z-index: 998;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+
+  /* Hide the desktop cart link inside the mobile menu */
+  .nav-links .cart-link {
+    display: none;
+  }
+
+  /* Show mobile actions */
+  .mobile-actions {
+    display: flex;
+  }
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  min-height: 80vh;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}

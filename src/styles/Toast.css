@@ -1,0 +1,32 @@
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #1e2a3e;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideInUp 0.3s ease-out;
+  font-weight: bold;
+}
+
+.toast-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.toast-error {
+  background: #dc3545;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
