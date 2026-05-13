@@ -32,3 +32,19 @@ a {
 html {
   scroll-behavior: smooth;
 }
+/* Mobile viewport fix */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+button, input, select, textarea {
+  font-size: 16px; /* prevents zoom on focus in iOS */
+}
+/* Better touch targets */
+button, .nav-link, .cart-icon, .menu-icon, .product-card {
+  touch-action: manipulation;
+}

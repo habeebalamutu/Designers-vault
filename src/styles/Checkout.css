@@ -301,3 +301,23 @@
   background: #28a745;
   color: white;
 }
+@media (max-width: 768px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .delivery-options, .payment-options {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .checkout-summary {
+    position: static;
+    margin-top: 1rem;
+  }
+  .place-order-btn {
+    font-size: 0.9rem;
+  }
+}

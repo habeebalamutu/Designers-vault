@@ -12,6 +12,25 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
+.cart-empty-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cart-empty-header {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.cart-empty-content {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
 .empty-icon {
   font-size: 4rem;
   color: #ccc;

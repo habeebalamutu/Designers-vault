@@ -13,17 +13,21 @@ const navigate = useNavigate()
   deliveryDate.setDate(today.getDate() + 5) // 5 business days
   return deliveryDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
-  if (cartItems.length === 0) {
-   return (
-  <div className="cart-empty fade-in">
-    <button className="back-button" onClick={() => navigate(-1)}>← Back</button>
-    <FaShoppingBag className="empty-icon" />
-    <h2>Your cart is empty</h2>
-    <p>Looks like you haven't added any products yet.</p>
-    <Link to="/products" className="shop-now-btn">Shop Now</Link>
-  </div>
-)
-  }
+ if (cartItems.length === 0) {
+  return (
+    <div className="cart-empty-page">
+      <div className="cart-empty-header">
+        <button className="back-button" onClick={() => navigate('/products')}>← Back to Shop</button>
+      </div>
+      <div className="cart-empty-content">
+        <FaShoppingBag className="empty-icon" />
+        <h2>Your cart is empty</h2>
+        <p>Looks like you haven't added any products yet.</p>
+        <Link to="/products" className="shop-now-btn">Shop Now</Link>
+      </div>
+    </div>
+  )
+}
 
   return (
     <div className="cart-page fade-in">
