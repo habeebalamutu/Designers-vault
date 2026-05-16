@@ -14,7 +14,7 @@ function Home() {
         <div className="feature">
           <FaTruck className="feature-icon" />
           <h3>Free Shipping</h3>
-          <p>On orders over $50</p>
+          <p>On orders over ₦50,000</p>
         </div>
         <div className="feature">
           <FaCreditCard className="feature-icon" />

@@ -1,31 +1,69 @@
-.admin-dashboard {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-
-.dashboard-header {
+.dashboard-stats {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+.stat-card {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 12px;
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+.orders-table th, .orders-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+.admin-products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.admin-product-item {
+  display: flex;
   align-items: center;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  background: #f8f9fa;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
-
-.logout-btn {
-  background-color: #dc3545;
+.admin-product-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.dashboard-section {
+  margin-top: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+.orders-table {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.status-badge {
+  background: #28a745;
   color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.logout-btn:hover {
-  background-color: #c82333;
-}
-
-.dashboard-content {
-  font-size: 1.1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
 }

@@ -175,3 +175,31 @@
     font-size: 0.75rem;
   }
 }
+/* Mobile */
+@media (max-width: 768px) {
+  .home .hero {
+    padding: 2rem 1rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .feature {
+    padding: 1rem;
+  }
+  .feature-icon {
+    font-size: 1.8rem;
+  }
+  .feature h3 {
+    font-size: 1rem;
+  }
+  .feature p {
+    font-size: 0.8rem;
+  }
+}

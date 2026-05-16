@@ -177,3 +177,15 @@
     gap: 0.5rem;
   }
 }
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  .nav-logo-img {
+    width: 28px;
+    height: 28px;
+  }
+  .cart-icon {
+    font-size: 1.1rem;
+  }
+}

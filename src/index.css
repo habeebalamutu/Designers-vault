@@ -8,15 +8,22 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
   color: #212529;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
 /* Global fade-in for route changes */
 .main-content {
   animation: fadeSlideUp 0.4s ease-out;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
 }
 
 @keyframes fadeSlideUp {
@@ -29,22 +36,42 @@ a {
     transform: translateY(0);
   }
 }
+
 html {
   scroll-behavior: smooth;
 }
-/* Mobile viewport fix */
+
+/* Prevent horizontal scroll on mobile */
 html, body {
   overflow-x: hidden;
-  width: 100%;
 }
 img, video, iframe {
   max-width: 100%;
   height: auto;
 }
+
+/* Prevents zoom on input focus in iOS */
 button, input, select, textarea {
-  font-size: 16px; /* prevents zoom on focus in iOS */
+  font-size: 16px;
 }
-/* Better touch targets */
+
+/* Better touch targets for mobile */
 button, .nav-link, .cart-icon, .menu-icon, .product-card {
   touch-action: manipulation;
+}
+
+/* ===== MOBILE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
+/* Better headings */
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+button {
+  cursor: pointer;
+  font-weight: 500;
 }

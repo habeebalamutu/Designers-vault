@@ -1,20 +1,23 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Toast from '../components/Toast'
 import '../styles/AdminLogin.css'
 
 function AdminLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [toast, setToast] = useState(null)
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Temporary hardcoded admin (will be replaced with real auth later)
+    // Mock admin credentials
     if (email === 'admin@designersvault.com' && password === 'admin123') {
       localStorage.setItem('adminAuth', 'true')
-      navigate('/admin/dashboard')
+      setToast({ message: 'Login successful!', type: 'success' })
+      setTimeout(() => navigate('/admin/dashboard'), 1000)
     } else {
-      alert('Invalid credentials. Use admin@designersvault.com / admin123')
+      setToast({ message: 'Invalid credentials. Use admin@designersvault.com / admin123', type: 'error' })
     }
   }
 
@@ -43,7 +46,9 @@ function AdminLogin() {
           </div>
           <button type="submit" className="login-btn">Login</button>
         </form>
+        <p className="demo-hint">Demo: admin@designersvault.com / admin123</p>
       </div>
+      {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     </div>
   )
 }
