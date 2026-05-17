@@ -31,17 +31,17 @@ function Cart() {
     return deliveryDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
   }
 
-  if (cartItems.length === 0) {
-    return (
-      <div className="cart-empty fade-in">
-        <button className="back-button" onClick={() => navigate('/products')}>← Back to Shop</button>
-        <FaShoppingBag className="empty-icon" />
-        <h2>Your cart is empty</h2>
-        <p>Looks like you haven't added any products yet.</p>
-        <Link to="/products" className="shop-now-btn">Shop Now</Link>
-      </div>
-    )
-  }
+ if (cartItems.length === 0) {
+  return (
+    <div className="cart-empty fade-in">
+      <button className="back-button" onClick={() => navigate('/products')}>← Back to Shop</button>
+      <FaShoppingBag className="empty-icon" />
+      <h2>Your cart is empty</h2>
+      <p>Looks like you haven't added any products yet.</p>
+      <Link to="/products" className="shop-now-btn">Shop Now</Link>
+    </div>
+  )
+}
 
   return (
     <div className="cart-page fade-in">
