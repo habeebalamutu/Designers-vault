@@ -31,18 +31,24 @@ function Cart() {
     return deliveryDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
   }
 
- if (cartItems.length === 0) {
-  return (
-    <div className="cart-empty fade-in">
-      <button className="back-button" onClick={() => navigate('/products')}>← Back to Shop</button>
-      <FaShoppingBag className="empty-icon" />
-      <h2>Your cart is empty</h2>
-      <p>Looks like you haven't added any products yet.</p>
-      <Link to="/products" className="shop-now-btn">Shop Now</Link>
-    </div>
-  )
-}
+  // Empty cart view
+  if (cartItems.length === 0) {
+    return (
+      <div className="cart-empty-page fade-in">
+        <div className="cart-empty-content">
+          <button className="back-button empty-back-btn" onClick={() => navigate('/products')}>
+            ← Back to Shop
+          </button>
+          <FaShoppingBag className="empty-icon" />
+          <h2>Your cart is empty</h2>
+          <p>Looks like you haven't added any products yet.</p>
+          <Link to="/products" className="shop-now-btn">Shop Now</Link>
+        </div>
+      </div>
+    )
+  }
 
+  // Non-empty cart view
   return (
     <div className="cart-page fade-in">
       <button className="back-button" onClick={() => navigate(-1)}>← Back</button>

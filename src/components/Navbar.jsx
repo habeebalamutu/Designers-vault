@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaShoppingCart, FaHome, FaBox, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa'
+import { FaShoppingCart, FaHome, FaBox, FaEnvelope, FaBars, FaTimes, FaHeart } from 'react-icons/fa'
 import { useCart } from '../contexts/CartContext'
 import '../styles/Navbar.css'
 import logo from '../assets/logo.jpeg'
@@ -17,7 +17,7 @@ function Navbar() {
           Designers Vault
         </Link>
 
-        {/* Desktop navigation links (including cart) */}
+        {/* Desktop navigation links */}
         <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
           <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
             <FaHome /> Home
@@ -25,17 +25,19 @@ function Navbar() {
           <Link to="/products" className="nav-link" onClick={() => setMenuOpen(false)}>
             <FaBox /> Products
           </Link>
+          <Link to="/wishlist" className="nav-link" onClick={() => setMenuOpen(false)}>
+            <FaHeart /> Wishlist
+          </Link>
           <Link to="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>
             <FaEnvelope /> Contact
           </Link>
-          {/* Cart link for desktop */}
           <Link to="/cart" className="nav-link cart-link" onClick={() => setMenuOpen(false)}>
             <FaShoppingCart />
             <span className="cart-count">{getCartCount()}</span>
           </Link>
         </div>
 
-        {/* Mobile: cart icon + hamburger (always visible on mobile, hidden on desktop) */}
+        {/* Mobile actions */}
         <div className="mobile-actions">
           <Link to="/cart" className="mobile-cart-icon">
             <FaShoppingCart />

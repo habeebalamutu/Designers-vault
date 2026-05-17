@@ -9,14 +9,13 @@ import AdminDashboard from './pages/AdminDashboard'
 import Cart from './pages/Cart'
 import Contact from './pages/Contact'
 import Checkout from './pages/Checkout'
+import Wishlist from './pages/Wishlist'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
     <>
       <Navbar />
-      <ScrollToTop />
-
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -27,9 +26,11 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   )
 }

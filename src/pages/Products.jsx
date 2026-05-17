@@ -4,6 +4,7 @@ import { useCart } from '../contexts/CartContext'
 import LoadingSpinner from '../components/LoadingSpinner'
 import Toast from '../components/Toast'
 import '../styles/Products.css'
+import { useWishlist } from '../contexts/WishlistContext'
 
 function Products() {
   const [products, setProducts] = useState([])
@@ -14,6 +15,7 @@ function Products() {
   const [selectedGender, setSelectedGender] = useState('All')
   const [selectedCategory, setSelectedCategory] = useState('All')
   const { addToCart } = useCart()
+  const { wishlist, addToWishlist, removeFromWishlist, isInWishlist } = useWishlist()
 
 useEffect(() => {
   const timer = setTimeout(() => {
@@ -122,6 +124,12 @@ useEffect(() => {
               <p className="in-stock">In stock: {product.stock}</p>
             )}
             <div className="card-buttons">
+              <button 
+  className="wishlist-btn"
+  onClick={() => isInWishlist(product.id) ? removeFromWishlist(product.id) : addToWishlist(product)}
+>
+  {isInWishlist(product.id) ? '❤️' : '🤍'}
+</button>
               <button 
                 className="view-details-btn"
                 onClick={() => window.location.href = `/product/${product.id}`}
